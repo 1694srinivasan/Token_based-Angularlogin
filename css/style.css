@@ -1,0 +1,44 @@
+html , body{
+  font-family: 'Roboto' , sans-serif;
+  font-size: 14px;
+  height: 100%;
+  margin: 0px;
+  padding: 0px;
+}
+
+md-toolbar h3 {
+  margin: auto;
+  font-weight: 200;
+}
+
+md-toolbar{
+  height: 50px; 
+}
+
+md-list-item > button {
+  width : 100%;
+  text-align: :left !important;
+}
+
+input:hover{
+  background-color: #ffffff;
+}
+
+.menudemoCustomTrigger .md-menu-demo {
+  padding: 24px; }
+
+.menudemoCustomTrigger .menu-demo-container {
+  min-height: 200px; }
+  
+.carddemoBasicUsage .card-media {
+  background-color: #999999; }
+
+.login-form {
+  md-card {
+    padding: 0!important;
+
+    md-card-title {
+      background-color: blue;
+    }
+  }
+}
