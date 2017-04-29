@@ -10,10 +10,28 @@ app.config(function($routeProvider) {
     .when("/", {
         templateUrl : "views/login.html",
         controller: 'loginctrl',
+        resolve:{
+        "check":function($location ,$rootScope,$cookies){   
+            if($cookies.get('token') && $cookies.get('currentuser')){ 
+                $location.path('/dashboard');
+            }else{
+                $location.path('/');
+            }
+        }
+    }       
     })
     .when("/dashboard", {
         templateUrl : "views/dashboard.html",
         controller: 'dashboardctrl',
+        resolve:{
+        "check":function($location ,$rootScope,$cookies){   
+            if($cookies.get('token')){ 
+                $location.path('/dashboard');
+            }else{
+                $location.path('/');
+            }
+        }
+    }
     })
     .when("/logout",{
         templateUrl : "views/logout.html",
@@ -264,6 +282,8 @@ app.controller('dashboardctrl' , function($scope, $http ,$location, $timeout, $m
         
     });  
     }else{
+        $cookies.remove("token");
+        $cookies.remove("currentuser");
         $location.path('/');
     }
 });
